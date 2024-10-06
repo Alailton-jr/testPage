@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>42 Quake Heroes</title>
+  <link rel="shortcut icon" type="im" href="/static/imgs/logo.jpeg">
+  <link rel="stylesheet" href="/static/css/styles.css">
+
+</head>
+<body class = "fade">
+
+  <div class="image-container">
+    <div class="background-image terra">
+      <img src="/static/imgs/terrareal.png" alt="Imagem da Terra">
+    </div>
+
+    
+
+    <p class="description"> Our algorithm, "42 Quake Heroes," distinguishes useful signals from noise.
+        It optimizes data transmission, ensuring that only relevant information is sent to Earth.
+        Seismology’s importance on other planets.
+        Studying moonquakes and marsquakes helps us understand planetary geology and future exploration potential. 
+        So, lets explore them?
+
+    </p>
+
+    
+
+    <a href="{{ url_for('choosemission') }}" class="image-buttons">
+      <img src="/static/imgs/modulofeliz.png" alt="Imagem do Módulo">
+    </a>
+
+
+    <div class="menu-buttons">
+      <a href="{{ url_for('receivingcode') }}" class="button-back">
+        <p>Back</p>
+      </a>
+      <a href="{{ url_for('team') }}" class="button-team">
+        <p>Team</p>
+      </a>
+      <a href="{{ url_for('choosemission') }}" class="button-forward">
+        <p>Forward</p>
+      </a>
+    </div>
+
+    <div class="background-image lua">
+      <img src="/static/imgs/lua.png" alt="Imagem da Lua">
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+        document.body.classList.add('fade-in');
+    };
+  </script>
+
+</body>
+</html>

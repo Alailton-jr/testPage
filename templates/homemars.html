@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>42 Quake Heroes</title>
+  <link rel="shortcut icon" type="im" href="/static/imgs/logo.jpeg">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <style>
+    body {
+      overflow: hidden; /* Bloqueia o scroll da página */
+    }
+  </style> 
+</head>
+<body class = "fade">
+
+  <div class="image-container">
+    
+
+    <p class="description">They are called Marsquakes when they occur on Mars.</p>
+    
+    
+    <a href="{{ url_for('hometired') }}" class="image-button-mars">
+      <img src="/static/imgs/insght.png" alt="Imagem do Módulo">
+    </a>
+
+    
+    <div class="menu-buttons">
+      <a href="{{ url_for('homemoon') }}" class="button-back">
+        <p>Back</p>
+      </a>
+      <a href="{{ url_for('team') }}" class="button-team">
+        <p>Team</p>
+      </a>
+      <a href="{{ url_for('hometired') }}" class="button-forward">
+        <p>Forward</p>
+      </a>
+    </div>
+
+    <div class="background-image lua" style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
+      <img src="/static/imgs/marsfloor0.png" alt="Imagem de Marte" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+    </div>
+    
+  </div>
+
+  <script>
+    window.onload = function() {
+        document.body.classList.add('fade-in');
+    };
+  </script>
+
+</body>
+</html>

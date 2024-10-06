@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="shortcut icon" type="image/png" href="/static/imgs/logo.jpeg">
+    <script src="https://kit.fontawesome.com/1bdef45d83.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+        body {
+            font-family: 'Afacad Flux', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background-color: #000000; /* Fundo preto */
+            color: #FFFFFF; /* Texto branco */
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        body.fade-in {
+            opacity: 1;
+        }
+        
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra branca suave */
+            border-radius: 8px;
+            background-color: #000000; /* Fundo da caixa preto */
+            border: 2px solid #5CE1E6; /* Borda azul claro */
+        }
+
+        h1 {
+            color: #FFFFFF; /* Título em branco */
+            text-decoration: underline; /* Sublinhado */
+            text-decoration-color: #5CE1E6; /* Cor do sublinhado azul claro */
+        }
+
+        p {
+            color: #FFFFFF; /* Texto do parágrafo em branco */
+        }
+
+        a {
+            color: #5CE1E6; /* Azul claro para os links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            text-decoration: underline; /* Sublinhado ao passar o mouse */
+            color: #007BFF; /* Efeito hover em azul */
+        }
+                    /* Estilos para centralizar os botões no canto inferior */
+                    .menu-buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espaçamento entre os botões */
+            z-index: 4;
+        }
+
+        /* Estilos para os links como botões */
+        .menu-buttons a {
+            background-color: #1463BD; /* Fundo azul escuro */
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: white; /* Texto branco */
+            padding: 10px; /* Padding para espaçamento interno */
+            width: 150px; /* Largura fixa para padronizar os botões */
+            height: 50px; /* Altura fixa para padronizar os botões */
+            border-radius: 10px; /* Bordas arredondadas */
+            border: 2px solid #5CE1E6; /* Borda azul claro */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-align: center; /* Centralizar o texto */
+            display: inline-block; /* Permitir que os links se comportem como botões */
+            line-height: 50px; /* Centraliza o texto verticalmente */
+        }
+
+        /* Estilo para os botões no estado hover */
+        .menu-buttons a:hover {
+            transform: scale(1.1);
+            background-color: #5271FF; /* Alteração de cor para azul médio no hover */
+        }
+
+        /* Botão com menos destaque (Team) */
+        .menu-buttons .button-team {
+            background-color: #000000; /* Fundo preto */
+            border: 2px solid #5CE1E6; /* Azul claro na borda */
+            color: #E0E0E0; /* Texto mais claro */
+            margin-top: 10px; /* Adiciona um espaço acima do botão Team */
+        }
+
+        /* Estilo para o botão Team no estado hover */
+        .menu-buttons .button-team:hover {
+            background-color: #5271FF; /* Azul claro no hover */
+            color: black; /* Texto preto para contraste */
+        }
+
+        /* Centralizar o texto dentro dos botões */
+        .menu-buttons a p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="fade">
+
+    <div class="container">
+        <h1>See the catalog with our results!</h1>
+        <p>To access the Google Drive with it, click the link below:</p>
+        <a href="https://docs.google.com/spreadsheets/d/1YZPCkNmME2pcWvU8oa6Jr6v-kNrslPSGJ9dDV_vCfsg/edit?gid=0#gid=0" target="_blank">Catalog</a>
+    </div>
+
+    <div class="menu-buttons">
+        <a href="{{ url_for('choosemission') }}" class="button-back">
+            <p>Missions</p>
+        </a>
+        <a href="{{ url_for('team') }}" class="button-forward">
+            <p>Team</p>
+        </a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            document.body.classList.add('fade-in');
+        };
+    </script>
+</body>
+</html>

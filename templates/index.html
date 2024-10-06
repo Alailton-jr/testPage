@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <title>42 QuakeHeroes</title>
+    <link rel="icon" href="/static/imgs/logo.jpeg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+        body {
+            font-family: 'Orbitron', sans-serif;
+            font-optical-sizing: auto;
+            font-style: bold;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(15,13,13);
+            background: linear-gradient(180deg, rgba(15,13,13,1) 0%, rgba(26,26,26,1) 52%, rgba(0,0,0,1) 63%);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 60%;
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        #text {
+            font-size: 1em;
+            font-family: 'Orbitron', sans-serif;
+            font-optical-sizing: auto;
+            font-style: bold;
+            line-height: 1.5;
+            
+        }
+
+         /* Definindo a animação fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Classe para a imagem com a animação */
+        .fade-in-image {
+            opacity: 0;
+            animation: fadeIn 2s forwards; /* Animação dura 2 segundos */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="text" style="text-align: center;"></div>
+    </div>
+    
+    <a href="{{ url_for('solarsystem') }}" class="image-buttons">
+        <img src="/static/imgs/modulo2.png" alt="Imagem do Módulo" >
+    </a>
+
+    <script>
+        var text = document.getElementById('text')
+        var TypeWriter = new Typewriter(text, {
+            loop: false,
+            delay: 30,
+            cursor: '<span style="color: #5CE1E6;">|</span>'
+        });
+    
+        TypeWriter
+            .pauseFor(500)
+            .typeString('Welcome! We are the team <span style="color:#5CE1E6;">42 Quake Heroes.</span>')
+            .pauseFor(500)
+            .deleteChars(16)
+            .pauseFor(300)  
+            .typeString('<br><img src="../static/imgs/logo.jpeg" class="fade-in-image" style="width: 200px; height: auto; margin-top: 20px;">') // Adiciona a imagem
+            .typeString('<br>Join us on an immersive journey to learn more about <br><span style="color:#5CE1E6;">seismic data across space</span>.')
+            .typeString('<br>Click the module below to start your journey across the solar system!')
+            .start()
+    </script>    
+
+</body>
+</html>

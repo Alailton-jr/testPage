@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>42 Quake Heroes</title>
+  <link rel="shortcut icon" type="im" href="/static/imgs/logo.jpeg">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <style>
+    body {
+      overflow: hidden; /* Bloqueia o scroll da página */
+    }
+  </style>  
+</head>
+<body class = "fade">
+
+  <div class="image-container">
+    <div class="background-image terra">
+      <img src="/static/imgs/terrareal.png" alt="Imagem da Terra">
+    </div>
+
+    
+
+    <p class="description"> Sending signals requires significant energy.
+      Transmitting high-resolution data from distant bodies is power-intensive and challenging.
+      Earthquakes are rare events.
+      Although large amounts of data are recorded, only a small fraction is useful. </p>
+   
+    
+
+    <a href="{{ url_for('receivingcode') }}" class="image-buttons">
+      <img src="/static/imgs/moduloreal.png" alt="Imagem do Módulo">
+    </a>
+
+
+    <div class="menu-buttons">
+      <a href="{{ url_for('homemars') }}" class="button-back">
+        <p>Back</p>
+      </a>
+      <a href="{{ url_for('team') }}" class="button-team">
+        <p>Team</p>
+      </a>
+      <a href="{{ url_for('receivingcode') }}" class="button-forward">
+        <p>Forward</p>
+      </a>
+    </div>
+
+    <div class="background-image lua">
+      <img src="/static/imgs/lua.png" alt="Imagem da Lua">
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+        document.body.classList.add('fade-in');
+    };
+  </script>
+
+</body>
+</html>
